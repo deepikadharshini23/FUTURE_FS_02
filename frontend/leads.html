@@ -1,0 +1,191 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CRM Dashboard</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <!DOCTYPE html>
+
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lead Management - Mini CRM</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<div class="layout">
+
+
+<div class="sidebar">
+
+    <h2>MINI CRM</h2>
+
+    <a href="dashboard.html">
+        Dashboard
+    </a>
+
+    <a href="leads.html" class="active">
+        Lead Management
+    </a>
+
+    <a href="#" onclick="logout()">
+        Logout
+    </a>
+
+</div>
+
+<div class="main">
+
+    <h1>Lead Management</h1>
+
+    <div class="form-card">
+
+        <h2>Add New Lead</h2>
+
+        <form id="leadForm">
+
+            <input
+                type="text"
+                id="name"
+                placeholder="Enter Name"
+                required
+            >
+
+            <input
+                type="email"
+                id="email"
+                placeholder="Enter Email"
+                required
+            >
+
+            <input
+                type="text"
+                id="phone"
+                placeholder="Enter Phone"
+                required
+            >
+
+            <input
+                type="text"
+                id="company"
+                placeholder="Enter Company"
+                required
+            >
+
+            <button type="submit">
+                Add Lead
+            </button>
+
+        </form>
+
+    </div>
+
+    <div class="table-card">
+
+        <h2>Leads</h2>
+
+        <input
+            type="text"
+            id="searchInput"
+            placeholder="Search by name or email..."
+        >
+
+        <table id="leadTable">
+
+            <thead>
+                <tr>
+                    <th>Name</th>
+                    <th>Email</th>
+                    <th>Phone</th>
+                    <th>Company</th>
+                    <th>Status</th>
+                    <th>Created Date</th>
+                    <th>Actions</th>
+                    <th>Notes</th>
+                </tr>
+            </thead>
+
+            <tbody id="leadList">
+
+            </tbody>
+
+        </table>
+
+    </div>
+
+    <div id="editModal" class="modal">
+
+    <div class="modal-content">
+
+        <span class="close" onclick="closeModal()">
+            &times;
+        </span>
+
+        <h2>Edit Lead</h2>
+
+        <input
+            type="hidden"
+            id="editId"
+        >
+
+        <input
+            type="text"
+            id="editName"
+            placeholder="Name"
+        >
+
+        <input
+            type="email"
+            id="editEmail"
+            placeholder="Email"
+        >
+
+        <input
+            type="text"
+            id="editPhone"
+            placeholder="Phone"
+        >
+
+        <input
+            type="text"
+            id="editCompany"
+            placeholder="Company"
+        >
+
+        <button onclick="saveEdit()">
+            Save Changes
+        </button>
+
+    </div>
+
+</div>
+
+
+
+</div>
+
+
+</div>
+
+<script>
+if (localStorage.getItem("loggedIn") !== "true") {
+    window.location.href = "login.html";
+}
+
+function logout() {
+    localStorage.removeItem("loggedIn");
+    window.location.href = "login.html";
+}
+</script>
+
+<script src="script.js"></script>
+
+</body>
+</html>

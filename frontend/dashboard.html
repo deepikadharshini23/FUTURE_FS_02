@@ -1,0 +1,94 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CRM Dashboard</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<div class="layout">
+
+    <!-- Sidebar -->
+    <div class="sidebar">
+
+    <h2>MINI CRM</h2>
+
+    <a href="dashboard.html" class="active">
+        Dashboard
+    </a>
+
+    <a href="leads.html">
+        Lead Management
+    </a>
+
+    <a href="#" onclick="logout()">
+        Logout
+    </a>
+
+</div>
+
+    <!-- Main Content -->
+    <div class="main">
+
+        <h1>Dashboard</h1>
+
+        <p>Manage and track your client leads efficiently.</p>
+
+        <!-- Statistics Cards -->
+        <div class="cards">
+
+            <div class="card">
+                <h3>Total Leads</h3>
+                <p id="total"></p>
+            </div>
+
+            <div class="card">
+                <h3>New</h3>
+                <p id="new"></p>
+            </div>
+
+            <div class="card">
+               <h3>Contacted</h3>
+               <p id="contacted"></p>
+            </div>
+
+            <div class="card">
+                <h3>Converted</h3>
+                <p id="converted"></p>
+            </div>
+
+
+        </div>
+
+        <!-- Add Lead Form -->
+        
+
+        <!-- Leads Table -->
+        
+
+    </div>
+
+</div>
+
+<script>
+    // Protect dashboard
+
+    if (localStorage.getItem("loggedIn") !== "true") {
+        window.location.href = "login.html";
+    }
+
+    function logout() {
+
+        localStorage.removeItem("loggedIn");
+
+        window.location.href = "login.html";
+    }
+</script>
+
+<script src="dashboard.js"></script>
+
+</body>
+</html>
